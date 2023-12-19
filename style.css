@@ -1,0 +1,258 @@
+h1{
+    font-size: 50px;
+    line-height: 64px;
+    color: black;
+}
+h2{
+    font-size: 46px;
+    line-height: 54px;
+    color: black;
+}
+h4{
+    font-size: 50px;
+    color: black;
+}
+h6{
+    font-weight: 700;
+    font-size: 12px;
+}
+p{
+    font-size: 16px;
+    color:gray;
+    margin: 15px 0 20px 0;
+}
+.section-p1{
+    padding: 40px, 80px;
+}
+.section-m1{
+    margin: 40px 0;
+}
+body{
+    width: 100%;
+    overflow-x: hidden;
+}
+
+#header{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px 80px;
+    background: rgb(111, 88, 88);
+    box-shadow: 0 5px 15px rgb(0, 0, 0.06);
+    z-index: 99;
+    position: sticky;
+    top: 0;
+    left: 0;
+    max-width: 100%;
+}
+#navbar{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+#navbar li{
+    list-style: none;
+    padding: 0 20px;
+}
+#navbar li a{
+    text-decoration: none;
+    color: black;
+    font-size: 24px;
+    font-weight: 600;
+    transition: 0.3s ease;
+}
+#navbar li a:hover,
+#navbar li a.active{
+    color:antiquewhite;
+}
+#book-container{
+    background-color: black;
+    height: 200px;
+    width: 750px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    margin: auto;
+    border-radius: 25px;
+    border-style:groove;
+    border-width: 10px;
+    border-color: wheat;
+}
+
+#book-container form{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    margin: auto;
+}
+#book-container form div{
+    margin-left: 50px;
+}
+#welcome{
+    background-image: url(images/1.png);
+    height: 70vh;
+    width: 100%;
+    background-size:cover;
+    background-position: center;
+    padding: 0 80px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+}
+
+#welcome h4{
+    padding-bottom: 15px;
+    /* color: white; */
+
+}
+#welcome p{
+    color: white;
+    font-size: large;
+
+}
+#welcome button{
+    color: black;
+    font-size: 18px; 
+    line-height: 18px; 
+    padding: 7px; 
+    border-radius: 12px;
+    font-family: Georgia, serif; 
+    font-weight: normal; 
+    text-decoration: none;
+    font-style: normal; 
+    font-variant: normal;
+    text-transform: none; 
+    background-image: linear-gradient(to right, rgb(111, 88, 88) 0%, rgb(134, 158, 89) 50%, rgb(111, 88, 88) 100%);        box-shadow: rgb(0, 0, 0) 5px 5px 15px 5px; 
+    border: 2px solid rgb(28, 110, 164);
+    display: inline-block;
+}
+#welcome button:hover{
+    background:rgb(111, 88, 88); 
+    color: antiquewhite;
+}
+#welcome button:active{
+    background:rgb(67, 55, 55); 
+
+}
+
+#about-page{
+    display:flex;
+    flex-direction: row;
+    align-items: flex-start;
+    justify-content:left;
+    padding: 50px 0;
+    background-color: blanchedalmond;
+    /* width: 100%; */
+}
+#about-page img{
+    width:400px;
+    height: 294px;
+    padding-right: 80px;
+    padding-left: 80px;
+
+}
+#about-container{
+    border: 10px;
+    border-style:outset;
+    border-color: black;
+    background-color: rgba(251, 119, 19);
+}
+#about-container p{
+    padding-left: 50px;
+    color: black
+}
+#room-suites{
+    text-align: center;
+    background-color: aliceblue;
+    padding-top: 25px;
+}
+.slider-wrapper{
+    position: relative;
+
+    max-width: 48rem;
+    margin: 0 auto;
+
+
+}
+/*  */
+.image-overlay{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    transition: opacity .25s;
+}
+.image-overlay:hover{
+    backdrop-filter: blur(20px);
+    opacity: 1;
+}
+.image-button{
+    background-color: black;
+    outline: none;
+    border: 1px solid white;
+    color: white;
+    font-family:'Courier New', Courier, monospace;
+    font-size: 24px;
+    font-weight: bold;
+    text-transform: uppercase;
+    text-decoration: none;
+    letter-spacing: 0.25em;
+    padding: 0.5em;
+    transition: background-color 0.25s;
+}
+.image-button:hover{
+    cursor: pointer;
+    background-color: gray;
+}
+
+/*  */
+.slider{
+    display: flex;
+    overflow-x: hidden;
+    aspect-ratio: 16/11;
+    scroll-snap-type: x mandatory;
+    scroll-behavior: smooth;
+    box-shadow: 0 1.5rem 3rem -0.75rem hsla(0,0%,0%,0.25);
+    border-radius: 20px;
+}
+.silder img{
+    height: 100%;
+    width: 100px;
+    flex: 1 0 100%;
+    scroll-snap-align: start;
+    object-fit: cover;
+
+}
+.slider-nav{
+    display: flex;
+    column-gap: 1rem;
+    position: absolute;
+    bottom: 1.25rem;
+    left: 50%;
+    transform: translate(-50%);
+    z-index: 1;
+    background: rgba(0, 0, 0, 0.7); 
+    padding: 10px;
+    
+}
+.slider-nav a{
+    width: 0.5rem;
+    height: 0.5rem;
+    border-radius: 50%;
+    background-color: gray;
+    opacity: 0.75;
+    transition: opacity ease 250ms;
+}
+.slider-nav a:hover{
+    opacity: 1;
+    background-attachment: black;
+}
+
