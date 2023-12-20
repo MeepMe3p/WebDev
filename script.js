@@ -2,36 +2,59 @@ let signupBtn = document.getElementById("signupBtn");
 let signinBtn = document.getElementById("signinBtn");
 let nameField = document.getElementById("nameField");
 let title = document.getElementById("title");
-signinBtn.onclick = function(){
-    nameField.style.maxHeight = "0";
-    title.innerHTML= "Sign In";
-    signupBtn.classList.add("disable");
-    signinBtn.classList.remove("disable");
 
+
+let cartItems = [];
+let totalCost = 0;
+
+function hello(){
+    window.location.href = "profile.html";
 }
-
-signupBtn.onclick = function(){
-    nameField.style.maxHeight = "60px";
-    title.innerHTML= "Sign Up";
-    signupBtn.classList.remove("disable");
-    signinBtn.classList.add("disable");
-}
-
-
-
-document.addEventListener('DOMContentLoaded', function () {
-    function login() {
-        // Get the values of emailField and passwordField
-        var emailField = document.getElementById("emailField").querySelector("input").value;
-        var passwordField = document.getElementById("passwordField").querySelector("input").value;
-
-        if (emailField === "elijah" && passwordField === "12345") {
-            // Open the profile.html file or perform the desired action
-            window.location.href = "profile.html";
-        } else {
-            // Display an error message or perform other actions for unsuccessful login
-            console.log("Login failed. Incorrect credentials.");
-        }
+function login() {
+    var email = document.getElementById("emailField").querySelector("input").value;
+    var password = document.getElementById("passwordField").querySelector("input").value;
+    var validEmail = "elijah";
+    var validPassword = "123";
+    if (email === validEmail && password === validPassword) {
+        window.location.href = "profile.html";
+    } else {
+        alert("Invalid email or password. Please try again.");
     }
+    return false;
+}
+
+
+function addToCart(price) {
+    cartItems.push(price);
+    alert("aaa");
+    updateCart();
+}
+
+function updateCart() {
+    const cartList = document.getElementById('cartList');
+    const totalElement = document.getElementById('total');
+
+    cartList.innerHTML = "";
+    totalCost = cartItems.reduce((acc, item) => acc + item, 0);
+
+    cartItems.forEach(item => {
+        const li = document.createElement('li');
+        li.textContent = `$${item}`;
+        cartList.appendChild(li);
+    });
+
+    totalElement.textContent = totalCost;
+
+    const checkoutBtn = document.getElementById('checkoutBtn');
+    checkoutBtn.disabled = cartItems.length === 0;
+}
+
+document.getElementById('paymentMethod').addEventListener('change', function () {
+    const creditCardDetails = document.getElementById('creditCardDetails');
+    creditCardDetails.style.display = this.value === 'creditCard' ? 'block' : 'none';
 });
+
+function processPayment() {
+    alert(`Payment successful!\nTotal Amount: $${totalCost}`);
+}
 

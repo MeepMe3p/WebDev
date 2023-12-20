@@ -89,3 +89,41 @@ height: 280px;
     background-color: #eaeaea;
     color: #555;
 }
+
+
+/*  */
+
+.container {
+    max-width: 800px;
+    margin: 20px auto;
+    background-color: #fff;
+    padding: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.product {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 10px;
+}
+
+.payment {
+    margin-top: 20px;
+}
+
+button {
+    background-color: #4caf50;
+    color: white;
+    padding: 10px;
+    border: none;
+    cursor: pointer;
+}
+
+button:disabled {
+    background-color: #aaa;
+    cursor: not-allowed;
+}
+header{
+    height: 100px;
+    background-color: #555;
+}

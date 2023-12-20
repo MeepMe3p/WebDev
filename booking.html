@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" href="login_booking.css">
+    <script src="script.js" defer></script>
+    <title>Billing Page</title>
+</head>
+<body>
+    <nav>
+        <header>
+            <a href="index.html"><img src="images/ers_logo.png" alt=""></a>
+        </header>
+    </nav>
+    <div class="container">
+        <h1>Resort Billing</h1>
+
+        <div class="product">
+            <span>Room Reservation</span>
+            <span>$100/night</span>
+            <button onclick="addToCart(100)">Add to Cart</button>
+        </div>
+
+        <div class="product">
+            <span>Spa Package</span>
+            <span>$50</span>
+            <button onclick="addToCart(50)">Add to Cart</button>
+        </div>
+
+        <div id="cart">
+            <h2>Reservation Details</h2>
+            <ul id="cartList"></ul>
+            <p>Total: $<span id="total">0</span></p>
+        </div>
+
+        <div class="payment">
+            <h2>Payment Details</h2>
+            <label for="paymentMethod">Select Payment Method:</label>
+            <select id="paymentMethod">
+                <option value="creditCard">Credit Card</option>
+                <option value="bankTransfer">Bank Transfer</option>
+            </select>
+
+            <div id="creditCardDetails" >
+                <label for="cardNumber">Card Number:</label>
+                <input type="text" id="cardNumber" placeholder="Enter card number">
+                <label for="expirationDate">Expiration Date:</label>
+                <input type="text" id="expirationDate" placeholder="MM/YY">
+            </div>
+
+            <button onclick="processPayment()" id="checkoutBtn">Checkout</button>
+        </div>
+    </div>
+
+</body>
+</html>
