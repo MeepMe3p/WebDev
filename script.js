@@ -26,7 +26,6 @@ function login() {
 
 function addToCart(price) {
     cartItems.push(price);
-    alert("aaa");
     updateCart();
 }
 
